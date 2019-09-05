@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/var/www/learn/c-sharp-in-practice/c-sharp-in-practice.csproj": {}
+  },
+  "projects": {
+    "/var/www/learn/c-sharp-in-practice/c-sharp-in-practice.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/var/www/learn/c-sharp-in-practice/c-sharp-in-practice.csproj",
+        "projectName": "c-sharp-in-practice",
+        "projectPath": "/var/www/learn/c-sharp-in-practice/c-sharp-in-practice.csproj",
+        "packagesPath": "/home/marcos/.nuget/packages/",
+        "outputPath": "/var/www/learn/c-sharp-in-practice/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/marcos/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

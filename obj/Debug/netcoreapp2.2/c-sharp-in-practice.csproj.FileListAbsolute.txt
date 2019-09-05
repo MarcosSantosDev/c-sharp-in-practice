@@ -1,0 +1,11 @@
+/var/www/learn/c-sharp-in-practice/bin/Debug/netcoreapp2.2/c-sharp-in-practice.deps.json
+/var/www/learn/c-sharp-in-practice/bin/Debug/netcoreapp2.2/c-sharp-in-practice.runtimeconfig.json
+/var/www/learn/c-sharp-in-practice/bin/Debug/netcoreapp2.2/c-sharp-in-practice.runtimeconfig.dev.json
+/var/www/learn/c-sharp-in-practice/bin/Debug/netcoreapp2.2/c-sharp-in-practice.dll
+/var/www/learn/c-sharp-in-practice/bin/Debug/netcoreapp2.2/c-sharp-in-practice.pdb
+/var/www/learn/c-sharp-in-practice/obj/Debug/netcoreapp2.2/c-sharp-in-practice.csprojAssemblyReference.cache
+/var/www/learn/c-sharp-in-practice/obj/Debug/netcoreapp2.2/c-sharp-in-practice.csproj.CoreCompileInputs.cache
+/var/www/learn/c-sharp-in-practice/obj/Debug/netcoreapp2.2/c-sharp-in-practice.AssemblyInfoInputs.cache
+/var/www/learn/c-sharp-in-practice/obj/Debug/netcoreapp2.2/c-sharp-in-practice.AssemblyInfo.cs
+/var/www/learn/c-sharp-in-practice/obj/Debug/netcoreapp2.2/c-sharp-in-practice.dll
+/var/www/learn/c-sharp-in-practice/obj/Debug/netcoreapp2.2/c-sharp-in-practice.pdb
