@@ -1,3 +1,9 @@
 # c-sharp-in-practice
 
-1° - Introduction (C# basic concepts).
+C# basic concepts.
+
+## Author
+
+- Marcos Santos - Software Developer 
+
+  - [GitHub](https://github.com/MarcosSantosDev) / [Linkedin](https://www.linkedin.com/in/marcossantosdev/)
