@@ -8,47 +8,80 @@ namespace c_sharp_in_practice
     {
         static void Main(string[] args)
         {
-            /** TIPOS DE VARIÁVEIS
-            var nome_variavel = valor; variavel dinamica 
-            <tipo> nome_variavel = valor; variavel estatica
-            */
+            /** OPERADORES LÓGICOS: [ 
+                    "==", "!=", 
+                    ">", "<", ">=", <=,
+                    "&&", "||" 
+                ]
+                CONDICIONAIS: [
+                    COMUM: "if", "else if", "else"),
+                    CASE: "switch",
+                    TERNARIO: (1 == 1 ? true : false;)
+                ] */
 
-            // Integer
-            var int2 = 6;
-            int int1 = 3;
-            // Double
-            var double2 = 6.1;
-            double double1 = 3.1;
-            // String
-            var str2 = "Santos";
-            string str1 = "Marcos";
-            // Bool
-            var boll2 = false;
-            bool boll1 = true;
+            // CONDICIONAL COMUM("if", "else if", "else")
+            // OPERADORES: ("==", "!=")
+            var n1 = 1;
+            if (n1 == 1)
+                Console.WriteLine("entrou na condição do if a == 1");
+            else if (n1 != 2)
+                Console.WriteLine("entrou na condição do else if a != 2");
+            else
+                Console.WriteLine("entrou na condição do else");
 
-            Console.WriteLine(int1);
-            Console.WriteLine(int2);
-            Console.WriteLine(str1);
-            Console.WriteLine(str2);
-            Console.WriteLine(boll1);
-            Console.WriteLine(boll2);
+            // OPERADORES: (">", "<", ">=", <=)
+            var n2 = 2;
+            if (n1 > n2)
+            {
+                Console.WriteLine(n1 + " e maior que " + n2);
+            }
 
-            /* CONVERSÕES */
-            var v1 = 1.0;
+            if (n1 < n2)
+            {
+                Console.WriteLine(n1 + " e menor que " + n2);
+            }
 
-            bool boolean1 = bool.Parse("false");
-            bool boolean2 = Convert.ToBoolean(v1);
+            if (n1 >= n2)
+            {
+                Console.WriteLine(n1 + " e maior ou igual a " + n2);
+            }
 
-            Animal a = new Animal();
-            Leao l = new Leao();
+            if (n1 <= n2)
+            {
+                Console.WriteLine(n1 + " e menor ou igual a " + n2);
+            }
 
-            l = (Leao)a;
+            // OPERADORES: ("&&", "||")
+            if (2 > 1 || 1 == 2)
+            {
+                Console.WriteLine("2 é maior ou igual a 1");
+            }
 
-            a = l;
+            if (2 > 1 && 1 != 2)
+            {
+                Console.WriteLine("2 é maior que 1 e 1 e diferente de 2");
+            }
+
+            // CONDICIONAL CASE("switch")
+            int value = 1;
+            switch (value)
+            {
+                case 1:
+                    Console.WriteLine("Valor igual a 1");
+                    break;
+                case 2:
+                    Console.WriteLine("Valor igual a 2");
+                    break;
+                default:
+                    Console.WriteLine("Nenhum dos valores entre os casos");
+                    break;
+            }
+
+            // CONDICIONAL TERNARIO
+            int n = 1;
+            string result = (n == 1 ? "é igual " : "não é igual ");
+
+            Console.WriteLine("A variavel n " + result + " 1");
         }
-
-        public class Animal { }
-
-        public class Leao : Animal { }
     }
 }
