@@ -8,80 +8,69 @@ namespace c_sharp_in_practice
     {
         static void Main(string[] args)
         {
-            /** OPERADORES LÓGICOS: [ 
-                    "==", "!=", 
-                    ">", "<", ">=", <=,
-                    "&&", "||" 
+            /** LOOPINGS
+                TIPOS: [
+                    while,
+                    do while,
+                    for,
+                    foreach,
+                    funções recursivas
                 ]
-                CONDICIONAIS: [
-                    COMUM: "if", "else if", "else"),
-                    CASE: "switch",
-                    TERNARIO: (1 == 1 ? true : false;)
-                ] */
+            */
 
-            // CONDICIONAL COMUM("if", "else if", "else")
-            // OPERADORES: ("==", "!=")
+            // # while
             var n1 = 1;
-            if (n1 == 1)
-                Console.WriteLine("entrou na condição do if a == 1");
-            else if (n1 != 2)
-                Console.WriteLine("entrou na condição do else if a != 2");
-            else
-                Console.WriteLine("entrou na condição do else");
 
-            // OPERADORES: (">", "<", ">=", <=)
-            var n2 = 2;
-            if (n1 > n2)
+            while (n1 <= 4)
             {
-                Console.WriteLine(n1 + " e maior que " + n2);
+                Console.WriteLine(n1);
+                n1++;
             }
 
-            if (n1 < n2)
+            Console.WriteLine("****** -- ******");
+
+            // # do while
+            do
             {
-                Console.WriteLine(n1 + " e menor que " + n2);
+                Console.WriteLine(n1);
+                n1++;
+            } while (n1 <= 10);
+
+            Console.WriteLine("****** -- ******");
+
+            // # for
+            for (int i = 0; i <= 4; i++)
+            {
+                Console.WriteLine(i);
             }
 
-            if (n1 >= n2)
+            Console.WriteLine("****** -- ******");
+
+            // # foreach
+            var collection = new List<int>();
+            collection.Add(1);
+            collection.Add(2);
+            collection.Add(3);
+            collection.Add(4);
+
+            foreach (var item in collection)
             {
-                Console.WriteLine(n1 + " e maior ou igual a " + n2);
+                Console.WriteLine(item);
             }
 
-            if (n1 <= n2)
+            Console.WriteLine("****** -- ******");
+
+            // #funções recursiva;
+            looping(1);
+        }
+
+        public static void looping(int a)
+        {
+            Console.WriteLine(a);
+            if (a < 4)
             {
-                Console.WriteLine(n1 + " e menor ou igual a " + n2);
+                looping(a + 1);
             }
-
-            // OPERADORES: ("&&", "||")
-            if (2 > 1 || 1 == 2)
-            {
-                Console.WriteLine("2 é maior ou igual a 1");
-            }
-
-            if (2 > 1 && 1 != 2)
-            {
-                Console.WriteLine("2 é maior que 1 e 1 e diferente de 2");
-            }
-
-            // CONDICIONAL CASE("switch")
-            int value = 1;
-            switch (value)
-            {
-                case 1:
-                    Console.WriteLine("Valor igual a 1");
-                    break;
-                case 2:
-                    Console.WriteLine("Valor igual a 2");
-                    break;
-                default:
-                    Console.WriteLine("Nenhum dos valores entre os casos");
-                    break;
-            }
-
-            // CONDICIONAL TERNARIO
-            int n = 1;
-            string result = (n == 1 ? "é igual " : "não é igual ");
-
-            Console.WriteLine("A variavel n " + result + " 1");
         }
     }
 }
