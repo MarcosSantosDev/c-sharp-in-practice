@@ -8,69 +8,50 @@ namespace c_sharp_in_practice
     {
         static void Main(string[] args)
         {
-            /** LOOPINGS
-                TIPOS: [
-                    while,
-                    do while,
-                    for,
-                    foreach,
-                    funções recursivas
-                ]
-            */
+            // # ARRAY
+            Console.WriteLine("## - ARRAY -##");
 
-            // # while
-            var n1 = 1;
+            string[] names1 = new string[3];
 
-            while (n1 <= 4)
+            names1[0] = "Marcos";
+            names1[1] = "Wesley";
+            names1[2] = "Diego";
+
+            foreach (var name in names1)
             {
-                Console.WriteLine(n1);
-                n1++;
+                Console.WriteLine(name);
             }
 
-            Console.WriteLine("****** -- ******");
-
-            // # do while
-            do
+            // Exists in Array
+            if (Array.Exists(names1, e => e == "Marcos"))
             {
-                Console.WriteLine(n1);
-                n1++;
-            } while (n1 <= 10);
-
-            Console.WriteLine("****** -- ******");
-
-            // # for
-            for (int i = 0; i <= 4; i++)
-            {
-                Console.WriteLine(i);
+                Console.WriteLine("O nome Marcos foi encontrado no Array.");
             }
 
-            Console.WriteLine("****** -- ******");
+            // Get length array
+            int size_array = names1.Length;
 
-            // # foreach
-            var collection = new List<int>();
-            collection.Add(1);
-            collection.Add(2);
-            collection.Add(3);
-            collection.Add(4);
+            Console.WriteLine("## - COLLECTION -##");
+            
+            // # COLLECTIONS
+            List<String> names2 = new List<String>();
+            names2.Add("Marcos");
+            names2.Add("Wesley");
+            names2.Add("Diego");
 
-            foreach (var item in collection)
+            foreach (var name in names2)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(name);
             }
 
-            Console.WriteLine("****** -- ******");
-
-            // #funções recursiva;
-            looping(1);
-        }
-
-        public static void looping(int a)
-        {
-            Console.WriteLine(a);
-            if (a < 4)
+            // Exists collection
+            if (names2.Exists(e => e == "Marcos"))
             {
-                looping(a + 1);
+                Console.WriteLine("O nome Marcos foi encontrado na collection list.");
             }
+
+            // Get length collection
+            int size_collection = names2.Count();
         }
     }
 }
