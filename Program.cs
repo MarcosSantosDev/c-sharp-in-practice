@@ -7,11 +7,12 @@ namespace c_sharp_in_practice
 {
     class Program
     {
-        /** # Funçoes
-            sintax: (local) (tipo) (retorno) (nome) (parametro)
+        /** # FUNCTION
+            sintax: (local) (type) (return) (name) (params)
 
-
-            * PascalCase, camelCase, under_line
+            --------------******-------------
+            PascalCase, camelCase, under_line
+            ---------------------------------
         */
 
         private static int Sum(int a, int b)
@@ -36,7 +37,7 @@ namespace c_sharp_in_practice
             Console.WriteLine("*=============*==============*");
         }
 
-        /** # Funçao recursiva */
+        /** #RECURSIVE FUNCTION */
         private static void ReadFileTxt(int numberFile) 
         {
             string pathFile = @"./test_files/file"+numberFile+".txt";
@@ -60,9 +61,31 @@ namespace c_sharp_in_practice
                 ReadFileTxt(numberFile+1);
             }
         }
+        /** CONSTANTS */
+        public const int SCHEDULED_EXIT = 1;
 
         static void Main(string[] args)
         {
+            /** 
+                SCHEDULED_EXIT = 2;
+                
+                IF YOU TRY CHANGE VALUE OF THE ONE CONSTANT VARIABLE, YOU PROGRAM NOT STARTED. 
+                THE VALUE OF CONSTANT VARIABLE BE MUST IMMUTABLE 
+            */
+            
+            while(true) 
+            {
+                Console.WriteLine("DIGITE "+SCHEDULED_EXIT+" P/ SAIR DO PROGRAMA.");
+
+                String strValue = Console.ReadLine();
+                int value = int.Parse(strValue);
+
+                if (SCHEDULED_EXIT == value)
+                {
+                    break;
+                }
+            }
+
             ReadFileTxt(1);
         }
     }
