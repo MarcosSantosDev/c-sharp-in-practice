@@ -38,11 +38,15 @@ namespace c_sharp_in_practice
         }
 
         /** #RECURSIVE FUNCTION */
-        private static void ReadFileTxt(int numberFile) 
+        private static void ReadFileTxt(int numberFile)
         {
-            string pathFile = @"./test_files/file"+numberFile+".txt";
+            string fileName = @"file" + numberFile + ".txt";
+            string pathFile = @"./test_files/" + fileName;
 
-            if(File.Exists(pathFile)) {
+            if (File.Exists(pathFile))
+            {
+                Console.WriteLine("Arquivo: " + fileName);
+
                 using (var reader = new StreamReader(pathFile))
                 {
                     string line;
@@ -54,39 +58,96 @@ namespace c_sharp_in_practice
                 }
             }
 
-            int next = numberFile+1;
-            string pathNextFile = @"./test_files/file"+next+".txt";
+            int next = numberFile + 1;
+            string pathNextFile = @"./test_files/file" + next + ".txt";
 
-            if(File.Exists(pathNextFile)) {
-                ReadFileTxt(numberFile+1);
+            if (File.Exists(pathNextFile))
+            {
+                ReadFileTxt(numberFile + 1);
             }
         }
-        /** CONSTANTS */
-        public const int SCHEDULED_EXIT = 1;
 
-        static void Main(string[] args)
+        private static void CalcularMediaAluno()
         {
-            /** 
-                SCHEDULED_EXIT = 2;
-                
-                IF YOU TRY CHANGE VALUE OF THE ONE CONSTANT VARIABLE, YOU PROGRAM NOT STARTED. 
-                THE VALUE OF CONSTANT VARIABLE BE MUST IMMUTABLE 
-            */
-            
-            while(true) 
+            Console.WriteLine("Digite o nome do aluno");
+
+            string nome = Console.ReadLine();
+            int qtdNotas = 3;
+
+            Console.WriteLine("Digite as " + qtdNotas + " notas do aluno " + nome);
+
+            List<int> notas = new List<int>();
+            int totalNotas = 0;
+
+            for (int i = 0; i < qtdNotas; i++)
             {
-                Console.WriteLine("DIGITE "+SCHEDULED_EXIT+" P/ SAIR DO PROGRAMA.");
+                Console.WriteLine("Digite a nota numero " + i);
+
+                int nota = int.Parse(Console.ReadLine());
+
+                totalNotas += nota;
+
+                notas.Add(nota);
+            }
+            int media = totalNotas / notas.Count();
+
+            Console.WriteLine("A media do aluno " + nome + " é: " + media);
+        }
+
+        public static void Menu()
+        {
+            while (true)
+            {
+                string message = "Olá usuario, bem vindo ao programa\n" +
+                "\n Utilizando programação funcional" +
+                "\n\n" +
+                "\n Digite uma das opções abaixo:" +
+                "\n     0 - Sair do programa" +
+                "\n     1 - Para ler arquivos" +
+                "\n     2 - Para executar a tabuada" +
+                "\n     3 - Calcular média de Alunos";
+
+                Console.WriteLine(message);
 
                 String strValue = Console.ReadLine();
                 int value = int.Parse(strValue);
 
-                if (SCHEDULED_EXIT == value)
+                if (value == SCHEDULED_EXIT)
                 {
                     break;
                 }
-            }
+                else if (value == READ_FILES)
+                {
+                    Console.WriteLine("======== Opção ler arquivos =========");
+                    ReadFileTxt(1);
+                }
+                else if (value == MULTIPLICATION_TABLE)
+                {
+                    Console.WriteLine("======== Opção tabuada =========");
+                    Console.WriteLine("Digite o numero que deseja na tabuada.");
 
-            ReadFileTxt(1);
+                    MultiplicationTable(1);
+                }
+                else if (value == MEDIA_CALCULATION)
+                {
+                    CalcularMediaAluno();
+                }
+                else
+                {
+                    Console.WriteLine("Opção invalida. Tente novamente.");
+                }
+            }
+        }
+
+        /** CONSTANTS */
+        public const int SCHEDULED_EXIT = 0;
+        public const int READ_FILES = 1;
+        public const int MULTIPLICATION_TABLE = 2;
+        public const int MEDIA_CALCULATION = 3;
+
+        static void Main(string[] args)
+        {
+            Menu();
         }
     }
 }
